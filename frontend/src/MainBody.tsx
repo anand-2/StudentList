@@ -50,7 +50,7 @@ function MainBody() {
 
     function fetchStudents()
     {
-      axios.get("http://localhost:5000/student")
+      axios.get("https://studentlist-dd0g.onrender.com/student")
       .then((res)=>{
           return setData(res.data.data);
       })
@@ -77,7 +77,7 @@ function MainBody() {
     if(title === 'Edit Student')
       {
         //To EDIT EXISTING STUDENT
-        axios.post("http://localhost:5000/editStudent",{
+        axios.post("https://studentlist-dd0g.onrender.com/editStudent",{
           name : event.name,
           email : event.email,
           phone : tempPhone,
@@ -99,7 +99,7 @@ function MainBody() {
       else{
 
         //To ADD STUDENT
-        axios.post("http://localhost:5000/addStudent",{
+        axios.post("https://studentlist-dd0g.onrender.com/addStudent",{
           name : event.name,
           email : event.email,
           phone : event.phone,
@@ -143,7 +143,7 @@ function searchStudent()
   }
 
   function deleteStudent(){
-    axios.post("http://localhost:5000/deleteStudent",{
+    axios.post("https://studentlist-dd0g.onrender.com/deleteStudent",{
         name : tempName
     })
     .then(res=>{
